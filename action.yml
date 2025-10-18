@@ -1,0 +1,55 @@
+name: '123Pan Upload Action'
+description: 'Upload files to 123Pan cloud storage.'
+author: 'baiyao10'
+
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+
+inputs:
+  auth-method:
+    description: 'Authentication method: "password" or "token"'
+    required: true
+    default: 'password'
+  username:
+    description: '123Pan username (required when auth-method is "password")'
+    required: false
+  password:
+    description: '123Pan password (required when auth-method is "password")'
+    required: false
+  authorization:
+    description: 'Authorization token (required when auth-method is "token")'
+    required: false
+
+  path:
+    description: 'Path to file or directory to upload'
+    required: true
+  destination:
+    description: 'Destination directory name in 123Pan (optional)'
+    required: false
+    default: ''
+  conflict-strategy:
+    description: 'How to handle file conflicts: "overwrite", "keep-both", or "skip"'
+    required: false
+    default: 'keep-both'
+
+  max-retries:
+    description: 'Maximum number of retry attempts for failed uploads'
+    required: false
+    default: '3'
+  chunk-size:
+    description: 'Upload chunk size in MB'
+    required: false
+    default: '5'
+
+outputs:
+  upload-status:
+    description: 'Upload status: success or failure'
+  uploaded-files:
+    description: 'List of successfully uploaded files'
+  upload-url:
+    description: '123Pan share URL (if available)'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

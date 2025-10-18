@@ -1,0 +1,21 @@
+name: Update Major Version Tag
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  update-majorver:
+    name: Update Major Version Tag
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Update major version tag
+        uses: nowactions/update-majorver@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
