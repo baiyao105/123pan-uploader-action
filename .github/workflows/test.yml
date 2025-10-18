@@ -18,7 +18,6 @@ jobs:
     
     - name: Test 123Pan Upload Action
       uses: ./
-      if: ${{ secrets.PAN123_USERNAME && secrets.PAN123_PASSWORD }}
       with:
         auth-method: 'password'
         username: ${{ secrets.PAN123_USERNAME }}

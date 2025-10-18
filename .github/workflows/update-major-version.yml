@@ -10,6 +10,8 @@ jobs:
     name: Update Major Version Tag
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
     
     steps:
       - name: Checkout code
@@ -18,4 +20,4 @@ jobs:
       - name: Update major version tag
         uses: nowactions/update-majorver@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}

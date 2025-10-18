@@ -1,7 +1,7 @@
-# 123Pan Upload Action
+# 123Pan Uploader Action
 
-[![GitHub](https://img.shields.io/github/license/baiyao105/123pan-upload-action)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/baiyao105/123pan-upload-action)](https://github.com/baiyao105/123pan-upload-action/releases)
+[![GitHub](https://img.shields.io/github/license/baiyao105/123pan-uploader-action)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/baiyao105/123pan-uploader-action)](https://github.com/baiyao105/123pan-uploader-action/releases)
 
 一个用于将文件上传到123Pan云盘的GitHub Action。
 
@@ -64,7 +64,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Upload files to 123Pan
-      uses: baiyao105/123pan-upload-action@v1
+      uses: baiyao105/123pan-uploader-action@v1
       with:
         auth-method: 'password'
         username: ${{ secrets.PAN123_USERNAME }}
@@ -78,7 +78,7 @@ jobs:
 
 ```yaml
 - name: Upload with Token
-  uses: baiyao105/123pan-upload-action@v1
+  uses: baiyao105/123pan-uploader-action@v1
   with:
     auth-method: 'token'
     authorization: ${{ secrets.PAN123_TOKEN }}
@@ -90,7 +90,7 @@ jobs:
 
 ```yaml
 - name: Upload single file
-  uses: baiyao105/123pan-upload-action@v1
+  uses: baiyao105/123pan-uploader-action@v1
   with:
     auth-method: 'password'
     username: ${{ secrets.PAN123_USERNAME }}
@@ -103,7 +103,7 @@ jobs:
 
 ```yaml
 - name: Upload with advanced settings
-  uses: baiyao105/123pan-upload-action@v1
+  uses: baiyao105/123pan-uploader-action@v1
   with:
     auth-method: 'password'
     username: ${{ secrets.PAN123_USERNAME }}
@@ -120,7 +120,7 @@ jobs:
 ```yaml
 - name: Upload files
   id: upload
-  uses: baiyao105/123pan-upload-action@v1
+  uses: baiyao105/123pan-uploader-action@v1
   with:
     auth-method: 'password'
     username: ${{ secrets.PAN123_USERNAME }}

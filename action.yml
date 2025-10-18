@@ -1,6 +1,6 @@
-name: '123Pan Upload Action'
+name: '123Pan Uploader Action'
 description: 'Upload files to 123Pan cloud storage.'
-author: 'baiyao10'
+author: 'baiyao105'
 
 branding:
   icon: 'upload-cloud'
