@@ -52,4 +52,4 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'ghcr.io/baiyao105/123pan-uploader-action:latest'
