@@ -14,13 +14,13 @@ if [ "$INPUT_AUTH_METHOD" = "password" ]; then
         echo "❌ Error: 'username' and 'password' are required when using password authentication"
         exit 1
     fi
-elif [ "$INPUT_AUTH_METHOD" = "webdev" ]; then
+elif [ "$INPUT_AUTH_METHOD" = "token" ]; then
     if [ -z "$INPUT_AUTHORIZATION" ]; then
-        echo "❌ Error: 'authorization' is required when using webdev authentication"
+        echo "❌ Error: 'authorization' is required when using token authentication"
         exit 1
     fi
 else
-    echo "❌ Error: Invalid auth-method. Must be 'password' or 'webdev'"
+    echo "❌ Error: Invalid auth-method. Must be 'password' or 'token'"
     exit 1
 fi
 if [ ! -e "$INPUT_PATH" ]; then

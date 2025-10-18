@@ -53,3 +53,13 @@ outputs:
 runs:
   using: 'docker'
   image: 'ghcr.io/baiyao105/123pan-uploader-action:latest'
+  env:
+    INPUT_AUTH_METHOD: ${{ inputs.auth-method }}
+    INPUT_USERNAME: ${{ inputs.username }}
+    INPUT_PASSWORD: ${{ inputs.password }}
+    INPUT_AUTHORIZATION: ${{ inputs.authorization }}
+    INPUT_PATH: ${{ inputs.path }}
+    INPUT_DESTINATION: ${{ inputs.destination }}
+    INPUT_CONFLICT_STRATEGY: ${{ inputs.conflict-strategy }}
+    INPUT_MAX_RETRIES: ${{ inputs.max-retries }}
+    INPUT_CHUNK_SIZE: ${{ inputs.chunk-size }}
