@@ -12,11 +12,11 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Update major version tag
         uses: nowactions/update-majorver@v1
         with:

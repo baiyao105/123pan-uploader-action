@@ -6,22 +6,20 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v5
-    
-    - name: Create test file
-      run: |
-        echo "Integration test file - $(date)" > integration-test.txt
-    
-    - name: Test 123Pan Upload Action
-      uses: ./
-      with:
-        auth-method: 'password'
-        username: ${{ secrets.PAN123_USERNAME }}
-        password: ${{ secrets.PAN123_PASSWORD }}
-        path: './integration-test.txt'
-        destination: 'github-actions-test'
-        conflict-strategy: 'keep-both'
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Create test file
+        run: |
+          echo "Integration test file - $(date)" > integration-test.txt
+
+      - name: Test 123Pan Upload Action
+        uses: ./
+        with:
+          auth-method: "password"
+          username: ${{ secrets.PAN123_USERNAME }}
+          password: ${{ secrets.PAN123_PASSWORD }}
+          path: "./integration-test.txt"
+          destination: "github-actions-test"
+          conflict-strategy: "keep-both"
