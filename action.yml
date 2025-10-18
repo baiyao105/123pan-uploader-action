@@ -52,7 +52,7 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'ghcr.io/baiyao105/123pan-uploader-action:latest'
+  image: 'docker://ghcr.io/baiyao105/123pan-uploader-action:latest'
   env:
     INPUT_AUTH_METHOD: ${{ inputs.auth-method }}
     INPUT_USERNAME: ${{ inputs.username }}
